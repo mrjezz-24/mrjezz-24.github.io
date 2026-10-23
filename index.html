@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.className+=" js"</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mr. Jezz | SEO &amp; Social Media Virtual Assistant</title>
 <meta name="description" content="Mr. Jezz is a Philippines-based virtual assistant for on-page SEO, WordPress optimization and social media management: graphics, video editing and daily posting.">
@@ -65,9 +66,12 @@ nav a:hover{color:var(--ink)}
 .hero{overflow-x:clip}
 @keyframes slide-in{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
 @keyframes slide-in-right{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:none}}
+#about{overflow-x:clip}
+/* .anim sections replay their slide-ins each time they scroll back into view (see script at the end) */
 @media (prefers-reduced-motion:no-preference){
-  .hero.play .slide{animation:slide-in .6s ease-out both;animation-delay:calc(var(--i) * .15s + .1s)}
-  .hero.play .photo{animation:slide-in-right .8s ease-out .2s both}
+  .js .anim:not(.play) .slide,.js .anim:not(.play) .slide-r{opacity:0}
+  .anim.play .slide{animation:slide-in .6s ease-out both;animation-delay:calc(var(--i) * .15s + .1s)}
+  .anim.play .slide-r{animation:slide-in-right .8s ease-out both;animation-delay:calc(var(--i,0) * .15s + .2s)}
 }
 .hero .facts{color:#bdb8b8}
 .hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;padding-block:64px 56px}
@@ -195,7 +199,7 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
 </header>
 
 <main id="top">
-  <div class="hero play">
+  <div class="hero anim play">
     <div class="wrap">
       <div class="intro">
         <span class="label slide" style="--i:0">Virtual Assistant · Philippines</span>
@@ -212,17 +216,17 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
           <span class="slide" style="--i:8">Works with <b>WordPress · Rank Math · Canva</b></span>
         </div>
       </div>
-      <img class="photo" src="profile.webp" width="900" height="900" alt="Mr. Jezz, SEO and Social Media Virtual Assistant">
+      <img class="photo slide-r" src="profile.webp" width="900" height="900" alt="Mr. Jezz, SEO and Social Media Virtual Assistant">
     </div>
   </div>
 
-  <section id="about">
+  <section id="about" class="anim">
     <div class="wrap about">
       <div>
-        <div class="head"><span class="label">About</span><h2>Better rankings start with the details</h2></div>
-        <p>I handle the on-page work that helps a website show up in search: SEO titles and meta descriptions, image alt text, compressed WebP images, and internal links that actually point where they should.</p>
-        <p>I use AI tools to research, plan and draft, which lets me take on site-wide updates without losing accuracy. Every change is checked on the live site before I call it done.</p>
-        <div class="snippet" style="margin-top:28px" aria-label="Search result for a site I optimized: Dalux Junk Removal &amp; Hauling homepage">
+        <div class="head slide" style="--i:0"><span class="label">About</span><h2>Better rankings start with the details</h2></div>
+        <p class="slide" style="--i:1">I handle the on-page work that helps a website show up in search: SEO titles and meta descriptions, image alt text, compressed WebP images, and internal links that actually point where they should.</p>
+        <p class="slide" style="--i:2">I use AI tools to research, plan and draft, which lets me take on site-wide updates without losing accuracy. Every change is checked on the live site before I call it done.</p>
+        <div class="snippet slide" style="margin-top:28px;--i:3" aria-label="Search result for a site I optimized: Dalux Junk Removal &amp; Hauling homepage">
           <span class="label" style="margin-bottom:6px">Client sample · Dalux Junk Removal &amp; Hauling</span>
           <span class="url">daluxjunkremovalandhauling.com</span>
           <a class="t" href="https://daluxjunkremovalandhauling.com/" target="_blank" rel="noopener">Junk Removal San Jose, CA | Dalux Junk Removal &amp; Hauling</a>
@@ -230,7 +234,7 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
           <div class="meta"><span>Title: 56 characters</span><span>Description: 154 characters</span><span>Service + city keyword</span><span>Phone number for calls</span></div>
         </div>
       </div>
-      <dl class="dl">
+      <dl class="dl slide-r">
         <div><dt>Role</dt><dd>SEO &amp; Social Media Virtual Assistant</dd></div>
         <div><dt>Location</dt><dd>Philippines</dd></div>
         <div><dt>Availability</dt><dd>Flexible hours, works across time zones</dd></div>
@@ -419,16 +423,18 @@ document.querySelectorAll('.copy').forEach(function(b){
     try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
   });
 });
-// Replay the hero slide-in each time the hero comes back into view
+// Replay each .anim section's slide-in every time it comes back into view
 (function(){
-  var hero=document.querySelector('.hero');
-  if(!('IntersectionObserver' in window)) return;
-  // reset once it has fully left the screen, replay when 30% is back in view
-  new IntersectionObserver(function(entries){
-    var e=entries[0];
-    if(!e.isIntersecting) hero.classList.remove('play');
-    else if(e.intersectionRatio>=.3) hero.classList.add('play');
-  },{threshold:[0,.3]}).observe(hero);
+  var els=document.querySelectorAll('.anim');
+  if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('play')});return}
+  // reset once a section has fully left the screen, replay when 30% of it (or of the screen, for tall sections) is back in view
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) e.target.classList.remove('play');
+      else if(e.intersectionRatio>=.3||e.intersectionRect.height>=innerHeight*.3) e.target.classList.add('play');
+    });
+  },{threshold:[0,.1,.2,.3]});
+  els.forEach(function(el){io.observe(el)});
 })();
 (function(){
   var f=document.getElementById('contact-form'), st=document.getElementById('form-status'), btn=f.querySelector('button');
