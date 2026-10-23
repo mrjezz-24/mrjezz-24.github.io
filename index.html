@@ -21,7 +21,7 @@
 <meta name="twitter:description" content="On-page SEO and WordPress optimization: Rank Math metadata, image SEO, WebP optimization and internal linking.">
 <meta name="twitter:image" content="https://mrjezz-24.github.io/og-image.jpg">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Mr. Jezz","jobTitle":"AI-Assisted SEO and Website Optimization Specialist","url":"https://mrjezz-24.github.io/","image":"https://mrjezz-24.github.io/profile.webp","email":"mailto:jezzersonjaym@gmail.com","address":{"@type":"PostalAddress","addressCountry":"PH"},"knowsAbout":["On-page SEO","Rank Math SEO","WordPress","Image SEO","WebP optimization","Internal linking"]}
+{"@context":"https://schema.org","@type":"Person","name":"Mr. Jezz","jobTitle":"AI-Assisted SEO and Website Optimization Specialist","url":"https://mrjezz-24.github.io/","image":"https://mrjezz-24.github.io/profile.webp","email":"mailto:jezzersonjaym@gmail.com","address":{"@type":"PostalAddress","addressCountry":"PH"},"sameAs":["https://www.facebook.com/jezzersonjay.r.mangalay.3"],"knowsAbout":["On-page SEO","Rank Math SEO","WordPress","Image SEO","WebP optimization","Internal linking"]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -130,6 +130,12 @@ section{padding-block:64px;border-bottom:1px solid var(--line)}
 .copy{font-family:var(--mono);font-size:.74rem;padding:5px 12px;border-radius:4px;border:1px solid var(--red);background:transparent;color:var(--ink);cursor:pointer}
 .copy:hover{background:var(--red-soft)}
 .contact h2 span{color:var(--red)}
+.socials{display:flex;flex-wrap:wrap;gap:10px}
+.social{display:inline-grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);transition:background .2s,border-color .2s,color .2s}
+.social:hover,.social:focus-visible{background:var(--red);border-color:var(--red);color:#fff}
+.social.sm{width:32px;height:32px}
+footer .wrap > span:first-child{display:inline-flex;align-items:center;gap:12px}
+@media (prefers-reduced-motion:reduce){.social{transition:none}}
 
 footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;color:var(--muted);font-size:.9rem}
 
@@ -268,13 +274,14 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
       <div class="lines">
         <div class="line"><span class="label">Email</span><div class="row"><span class="val" id="email-val">jezzersonjaym@gmail.com</span><button class="copy" type="button" data-copy="email-val">Copy</button></div></div>
         <div class="line"><span class="label">Phone</span><div class="row"><span class="val" id="phone-val">0912 223 2092</span><button class="copy" type="button" data-copy="phone-val">Copy</button></div></div>
+        <div class="line"><span class="label">Follow me</span><div class="socials"><a class="social" href="https://www.facebook.com/jezzersonjay.r.mangalay.3" target="_blank" rel="noopener me" aria-label="Mr. Jezz on Facebook" title="Facebook"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a></div></div>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap"><span>© 2026 Mr. Jezz</span><span>AI-Assisted SEO &amp; Website Optimization</span></div>
+  <div class="wrap"><span>© 2026 Mr. Jezz <a class="social sm" href="https://www.facebook.com/jezzersonjay.r.mangalay.3" target="_blank" rel="noopener me" aria-label="Mr. Jezz on Facebook" title="Facebook"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a></span><span>AI-Assisted SEO &amp; Website Optimization</span></div>
 </footer>
 
 <script>
