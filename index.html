@@ -62,11 +62,15 @@ nav a:hover{color:var(--ink)}
 .hero .lede{color:#c9c4c4}
 .hero .photo{width:138%;max-width:none;margin-inline:-19%}
 .hero .intro{position:relative;z-index:1}
+.hero{overflow-x:clip}
+@keyframes slide-in{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:no-preference){.hero .slide{animation:slide-in .6s ease-out both;animation-delay:calc(var(--i) * .15s + .1s)}}
 .hero .facts{color:#bdb8b8}
 .hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;padding-block:64px 56px}
 .intro{display:grid;gap:22px;min-width:0}
 .hero h1{font-size:clamp(2.8rem,8vw,5rem);font-weight:700}
-.hero h1 span{color:var(--red);display:block}
+.hero h1 .h1-line{display:block}
+.hero h1 .h1-red{color:var(--red);display:block}
 .lede{color:var(--muted);font-size:1.12rem;max-width:34em}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-block;padding:13px 22px;border-radius:4px;font-weight:600;text-decoration:none;font-family:var(--body);font-size:1rem;cursor:pointer;border:2px solid var(--red)}
@@ -190,18 +194,18 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
   <div class="hero">
     <div class="wrap">
       <div class="intro">
-        <span class="label">Virtual Assistant · Philippines</span>
-        <h1>Mr. Jezz <span>SEO &amp; Social Media</span></h1>
-        <p class="lede">Virtual assistant for SEO, website optimization and social media management. I make WordPress sites easier to find and keep your social pages active with graphics, videos and daily posts.</p>
-        <div class="cta">
+        <span class="label slide" style="--i:0">Virtual Assistant · Philippines</span>
+        <h1><span class="h1-line slide" style="--i:1">Mr. Jezz</span> <span class="h1-red"><span class="h1-line slide" style="--i:2">SEO &amp;</span> <span class="h1-line slide" style="--i:3">Social Media</span></span></h1>
+        <p class="lede slide" style="--i:4">Virtual assistant for SEO, website optimization and social media management. I make WordPress sites easier to find and keep your social pages active with graphics, videos and daily posts.</p>
+        <div class="cta slide" style="--i:5">
           <a class="btn primary" href="#contact">Hire me</a>
           <a class="btn ghost" href="#experience">See my work</a>
           <a class="btn ghost" href="resume.pdf" download="Jezzerson-Jay-Mangalay-Resume.pdf">Download resume</a>
         </div>
         <div class="facts">
-          <span>Based in <b>Philippines</b></span>
-          <span>Hours <b>Flexible</b></span>
-          <span>Works with <b>WordPress · Rank Math · Canva</b></span>
+          <span class="slide" style="--i:6">Based in <b>Philippines</b></span>
+          <span class="slide" style="--i:7">Hours <b>Flexible</b></span>
+          <span class="slide" style="--i:8">Works with <b>WordPress · Rank Math · Canva</b></span>
         </div>
       </div>
       <img class="photo" src="profile.webp" width="900" height="900" alt="Mr. Jezz, SEO and Social Media Virtual Assistant">
