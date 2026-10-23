@@ -23,6 +23,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Mr. Jezz","alternateName":"Jezzerson Jay Mangalay","jobTitle":"SEO & Social Media Virtual Assistant","url":"https://mrjezz-24.github.io/","image":"https://mrjezz-24.github.io/profile.webp","email":"mailto:jezzersonjaym@gmail.com","address":{"@type":"PostalAddress","addressCountry":"PH"},"sameAs":["https://www.facebook.com/jezzersonjay.r.mangalay.3"],"knowsAbout":["Social media management","Graphic design","Video editing","Canva","Content creation","On-page SEO","Rank Math SEO","WordPress","Image SEO","WebP optimization","Internal linking"]}
 </script>
+<link rel="preload" as="image" href="hero-bg.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=Archivo+Narrow:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -57,7 +58,9 @@ nav a{color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem}
 nav a:hover{color:var(--ink)}
 
 /* hero */
-.hero{border-bottom:4px solid var(--red)}
+.hero{border-bottom:4px solid var(--red);background-color:var(--bg);background-image:linear-gradient(to bottom,rgba(11,11,12,0) 60%,var(--bg) 100%),linear-gradient(to right,rgba(11,11,12,.92) 0%,rgba(11,11,12,.88) 45%,rgba(11,11,12,.45) 100%),url("hero-bg.webp");background-size:cover;background-position:center}
+.hero .lede{color:#c9c4c4}
+.hero .facts{color:#bdb8b8}
 .hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:center;padding-block:64px 56px}
 .intro{display:grid;gap:22px;min-width:0}
 .hero h1{font-size:clamp(2.8rem,8vw,5rem);font-weight:700}
@@ -70,7 +73,7 @@ nav a:hover{color:var(--ink)}
 .btn.ghost{background:transparent;color:var(--ink)}
 .facts{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--mono);font-size:.84rem;color:var(--muted)}
 .facts b{color:var(--ink);font-weight:500}
-.photo{display:block;width:100%;max-width:100%;height:auto;-webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent);mask-image:linear-gradient(to bottom,#000 78%,transparent)}
+.photo{display:block;width:100%;max-width:100%;height:auto;-webkit-mask-image:radial-gradient(ellipse 50% 52% at 50% 45%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 50% 52% at 50% 45%,#000 62%,transparent 100%)}
 
 /* search snippet */
 .snippet{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:grid;gap:4px;max-width:36em;min-width:0}
@@ -159,6 +162,7 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
   .skills{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr}
   .photo{max-width:260px}
+  .hero{background-image:linear-gradient(to bottom,rgba(11,11,12,.84),rgba(11,11,12,.88) 70%,var(--bg)),url("hero-bg.webp")}
   .exp{padding:24px}
 }
 @media (max-width:500px){.skills,.steps{grid-template-columns:1fr} header.top{position:static}}
