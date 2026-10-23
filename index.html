@@ -136,6 +136,17 @@ section{padding-block:64px;border-bottom:1px solid var(--line)}
 .social.sm{width:32px;height:32px}
 footer .wrap > span:first-child{display:inline-flex;align-items:center;gap:12px}
 @media (prefers-reduced-motion:reduce){.social{transition:none}}
+.cform{display:grid;gap:14px;margin-top:28px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px 18px}
+.cform label{display:grid;gap:6px}
+.cform input,.cform textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:11px 12px}
+.cform textarea{min-height:130px;resize:vertical}
+.cform input:focus,.cform textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px var(--red-soft)}
+.cform .btn{justify-self:start}
+.cform .btn:disabled{opacity:.6;cursor:wait}
+.cform .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-status{margin:0;font-weight:600}
+.form-status.ok{color:var(--ink)}
+.form-status.err{color:var(--red)}
 
 footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;color:var(--muted);font-size:.9rem}
 
@@ -270,7 +281,19 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
 
   <section id="contact" class="contact" style="border-bottom:4px solid var(--red)">
     <div class="wrap">
-      <div class="head" style="margin-bottom:0"><span class="label">Contact</span><h2>Need your site <span>optimized?</span></h2><p>Send me a message with your website and what you'd like improved. I'll get back to you with how I can help.</p></div>
+      <div class="head" style="margin-bottom:0"><span class="label">Contact</span><h2>Need your site <span>optimized?</span></h2><p>Send me a message with your website and what you'd like improved. I'll get back to you with how I can help.</p>
+        <form class="cform" id="contact-form" action="https://formsubmit.co/jezzersonjaym@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from your portfolio site">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+          <label><span class="label">Name</span><input type="text" name="name" required autocomplete="name"></label>
+          <label><span class="label">Email</span><input type="email" name="email" required autocomplete="email"></label>
+          <label><span class="label">Message</span><textarea name="message" required></textarea></label>
+          <button class="btn primary" type="submit">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
       <div class="lines">
         <div class="line"><span class="label">Email</span><div class="row"><span class="val" id="email-val">jezzersonjaym@gmail.com</span><button class="copy" type="button" data-copy="email-val">Copy</button></div></div>
         <div class="line"><span class="label">Phone</span><div class="row"><span class="val" id="phone-val">0912 223 2092</span><button class="copy" type="button" data-copy="phone-val">Copy</button></div></div>
@@ -293,6 +316,19 @@ document.querySelectorAll('.copy').forEach(function(b){
     try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
   });
 });
+(function(){
+  var f=document.getElementById('contact-form'), st=document.getElementById('form-status'), btn=f.querySelector('button');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(f._honey.value) return;
+    btn.disabled=true; btn.textContent='Sending…'; st.className='form-status'; st.textContent='';
+    fetch('https://formsubmit.co/ajax/jezzersonjaym@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+      .then(function(r){return r.json().then(function(d){if(!r.ok||String(d.success)!=='true')throw 0})})
+      .then(function(){f.reset();st.className='form-status ok';st.textContent="Thanks, I'll get back to you soon."})
+      .catch(function(){st.className='form-status err';st.textContent="Sorry, that didn't send. Please email me at jezzersonjaym@gmail.com."})
+      .then(function(){btn.disabled=false;btn.textContent='Send message'});
+  });
+})();
 </script>
 </body>
 </html>
