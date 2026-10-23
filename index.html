@@ -64,6 +64,10 @@ nav a:hover{color:var(--ink)}
 .hero h1 span{color:var(--red);display:block}
 .lede{color:var(--muted);font-size:1.12rem;max-width:34em}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
+.cv{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-top:14px}
+.cv a{font-family:var(--mono);font-size:.8rem;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.cv a::before{content:"↓ ";color:var(--red)}
+.cv a:hover,.cv a:focus-visible{border-color:var(--red);background:var(--red-soft)}
 .btn{display:inline-block;padding:13px 22px;border-radius:4px;font-weight:600;text-decoration:none;font-family:var(--body);font-size:1rem;cursor:pointer;border:2px solid var(--red)}
 .btn.primary{background:var(--red);color:#fff}
 .btn.primary:hover{background:var(--red-deep);border-color:var(--red-deep)}
@@ -189,8 +193,8 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
         <div class="cta">
           <a class="btn primary" href="#contact">Hire me</a>
           <a class="btn ghost" href="#experience">See my work</a>
-          <a class="btn ghost" href="resume-social-media.pdf" download>Download resume</a>
         </div>
+        <div class="cv"><span class="label">Resumes</span><a href="resume-seo.pdf" download>SEO resume</a><a href="resume-social-media.pdf" download>Social media resume</a></div>
         <div class="facts">
           <span>Based in <b>Philippines</b></span>
           <span>Hours <b>Flexible</b></span>
@@ -237,7 +241,7 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
         <div class="skill"><h3>Internal linking</h3><p>Internal linking corrections and consistent content across the site.</p></div>
         <div class="skill"><h3>Site-wide updates</h3><p>Large content updates rolled out across many pages at once.</p></div>
         <div class="skill"><h3>AI-assisted workflow</h3><p>AI-assisted research, planning, drafting and workflow optimization.</p></div>
-        <div class="skill"><h3>Quality checks</h3><p>Live website updates with implementation quality checks.</p></div>
+        <div class="skill"><h3>SEO quality checks</h3><p>Live website updates with implementation quality checks.</p></div>
       </div>
       <h3 class="subhead">Social media &amp; creative</h3>
       <div class="skills">
@@ -264,17 +268,17 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
       <div class="head"><span class="label">Experience</span><h2>Recent work</h2></div>
       <article class="exp">
         <div style="display:grid;gap:12px;align-content:start">
-          <span class="label">WordPress · SEO</span>
-          <h3>AI-Assisted SEO &amp; Website Optimization Specialist</h3>
+          <span class="label">Project-based · 2026</span>
+          <h3>SEO &amp; Website Optimization Project</h3>
         </div>
         <div style="display:grid;gap:18px">
           <p class="desc">Executed on-page SEO improvements and WordPress website optimization, leveraging AI tools to improve workflow efficiency and support large-scale implementation.</p>
           <ul class="tasks">
-            <li>Rank Math metadata: SEO titles and meta descriptions</li>
-            <li>Image SEO and alt text</li>
-            <li>WebP optimization and image replacement</li>
-            <li>Internal linking fixes</li>
-            <li>Site-wide content updates</li>
+            <li>Implemented SEO title and meta description updates across existing website pages using Rank Math SEO</li>
+            <li>Corrected broken or missing image alt text and added descriptive alt text to page and media-library images</li>
+            <li>Replaced large logo and mascot image files with smaller WebP versions to help reduce image payloads</li>
+            <li>Updated site-wide service messaging and corrected internal links across the website</li>
+            <li>Planned and drafted changes before publishing updates to the live website</li>
           </ul>
         </div>
       </article>
@@ -382,7 +386,7 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
       <div class="lines">
         <div class="line"><span class="label">Email</span><div class="row"><span class="val" id="email-val">jezzersonjaym@gmail.com</span><button class="copy" type="button" data-copy="email-val">Copy</button></div></div>
         <div class="line"><span class="label">Phone</span><div class="row"><span class="val" id="phone-val">0912 223 2092</span><button class="copy" type="button" data-copy="phone-val">Copy</button></div></div>
-        <div class="line"><span class="label">Resume</span><div class="row"><a class="btn primary" href="resume-social-media.pdf" download>Download resume (PDF)</a></div></div>
+        <div class="line" id="resumes"><span class="label">Resumes</span><div class="row" style="justify-content:flex-start"><a class="btn primary" href="resume-seo.pdf" download>SEO resume (PDF)</a><a class="btn primary" href="resume-social-media.pdf" download>Social media resume (PDF)</a></div></div>
         <div class="line"><span class="label">Follow me</span><div class="socials"><a class="social" href="https://www.facebook.com/jezzersonjay.r.mangalay.3" target="_blank" rel="noopener me" aria-label="Mr. Jezz on Facebook" title="Facebook"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a></div></div>
       </div>
     </div>
