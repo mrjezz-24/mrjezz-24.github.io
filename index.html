@@ -64,7 +64,23 @@ nav a:hover{color:var(--ink)}
 .hero .intro{position:relative;z-index:1}
 .hero{overflow-x:clip}
 @keyframes slide-in{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:no-preference){.hero.play .slide{animation:slide-in .6s ease-out both;animation-delay:calc(var(--i) * .15s + .1s)}}
+/* photo reveal: a lightning bolt draws in, two soft flashes (under 3 per second), then the photo powers on */
+.photo-wrap{position:relative;min-width:0}
+.bolt,.flash{position:absolute;pointer-events:none;opacity:0}
+.bolt{left:50%;top:-8%;height:72%;transform:translateX(-50%);overflow:visible}
+.bolt path{fill:none;stroke:#e9f6ff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;filter:drop-shadow(0 0 4px #9fd4ff) drop-shadow(0 0 12px #4da3ff)}
+.flash{inset:0;background:radial-gradient(ellipse 48% 44% at 50% 36%,rgba(225,242,255,.85),rgba(77,163,255,.4) 45%,transparent 100%)}
+@keyframes bolt-in{0%{opacity:1;stroke-dashoffset:100}18%{opacity:1;stroke-dashoffset:0}28%{opacity:1}36%,100%{opacity:0;stroke-dashoffset:0}}
+@keyframes bolt-show{0%,36%{opacity:1}40%,100%{opacity:0}}
+@keyframes flash{0%{opacity:0}10%{opacity:.6}22%,38%{opacity:0}42%{opacity:.5}56%,100%{opacity:0}}
+@keyframes power-on{0%,40%{opacity:0;transform:scale(1.04);filter:brightness(2.5) drop-shadow(0 0 28px rgba(77,163,255,.7))}46%{opacity:1}100%{opacity:1;transform:none;filter:brightness(1) drop-shadow(0 0 0 rgba(77,163,255,0))}}
+@media (prefers-reduced-motion:no-preference){
+  .hero.play .slide{animation:slide-in .6s ease-out both;animation-delay:calc(var(--i) * .15s + .1s)}
+  .hero.play .photo{animation:power-on 1.4s ease-out .3s both}
+  .hero.play .bolt{animation:bolt-show 1.4s linear .3s both}
+  .hero.play .bolt path{animation:bolt-in 1.4s ease-out .3s both}
+  .hero.play .flash{animation:flash 1.4s linear .3s both}
+}
 .hero .facts{color:#bdb8b8}
 .hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;padding-block:64px 56px}
 .intro{display:grid;gap:22px;min-width:0}
@@ -208,7 +224,11 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
           <span class="slide" style="--i:8">Works with <b>WordPress · Rank Math · Canva</b></span>
         </div>
       </div>
-      <img class="photo" src="profile.webp" width="900" height="900" alt="Mr. Jezz, SEO and Social Media Virtual Assistant">
+      <div class="photo-wrap">
+        <img class="photo" src="profile.webp" width="900" height="900" alt="Mr. Jezz, SEO and Social Media Virtual Assistant">
+        <svg class="bolt" viewBox="0 0 100 300" aria-hidden="true"><path pathLength="100" d="M62 0 L44 70 L60 74 L36 150 L54 154 L30 235 M44 116 L24 150 M50 190 L68 222"/></svg>
+        <span class="flash" aria-hidden="true"></span>
+      </div>
     </div>
   </div>
 
