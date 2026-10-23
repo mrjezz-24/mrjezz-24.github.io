@@ -79,7 +79,8 @@ nav a:hover{color:var(--ink)}
 /* search snippet */
 .snippet{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:grid;gap:4px;max-width:36em;min-width:0}
 .snippet .url{font-family:var(--mono);font-size:.78rem;color:var(--muted);word-break:break-all}
-.snippet .t{color:#ff6a70;font-size:1.15rem;font-weight:500}
+.snippet .t{color:#ff6a70;font-size:1.15rem;font-weight:500;text-decoration:none}
+.snippet a.t:hover,.snippet a.t:focus-visible{text-decoration:underline}
 .snippet .d{color:var(--muted);font-size:.93rem}
 .snippet .meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
 .snippet .meta span::before{content:"✓ ";color:var(--red)}
@@ -211,11 +212,12 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
         <div class="head"><span class="label">About</span><h2>Better rankings start with the details</h2></div>
         <p>I handle the on-page work that helps a website show up in search: SEO titles and meta descriptions, image alt text, compressed WebP images, and internal links that actually point where they should.</p>
         <p>I use AI tools to research, plan and draft, which lets me take on site-wide updates without losing accuracy. Every change is checked on the live site before I call it done.</p>
-        <div class="snippet" style="margin-top:28px" aria-label="Example of an optimized search result">
-          <span class="url">yourwebsite.com › services</span>
-          <span class="t">Your Service in Your City | Clear, Keyword-Rich Title</span>
-          <span class="d">A meta description written to match what people search for and give them a reason to click, kept within the length search engines show.</span>
-          <div class="meta"><span>Title length</span><span>Meta description</span><span>Focus keyword</span></div>
+        <div class="snippet" style="margin-top:28px" aria-label="Search result for a page I optimized: Dalux Junk Removal house cleanout page">
+          <span class="label" style="margin-bottom:6px">Client sample · Dalux Junk Removal &amp; Hauling</span>
+          <span class="url">daluxjunkremovalandhauling.com › house-cleanout-san-jose-ca</span>
+          <a class="t" href="https://daluxjunkremovalandhauling.com/house-cleanout-san-jose-ca/" target="_blank" rel="noopener">House Cleanout in San Jose, CA | Dalux Junk Removal</a>
+          <span class="d">House cleanouts in San Jose, from one room to the whole home. We sort, carry out, donate, recycle and sweep up. Free quote first: 408-466-0288.</span>
+          <div class="meta"><span>Title: 51 characters</span><span>Description: 143 characters</span><span>Service + city keyword</span><span>Phone number for calls</span></div>
         </div>
       </div>
       <dl class="dl">
