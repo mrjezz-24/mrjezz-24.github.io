@@ -36,7 +36,7 @@ nav a[aria-current="page"]{color:var(--red)}
 .hero{overflow-x:clip}
 @keyframes slide-in{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
 @keyframes slide-in-right{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:none}}
-#about,#contact,#work{overflow-x:clip}
+#about,#contact,#work,section.anim{overflow-x:clip}
 /* work samples */
 .work-group{margin-top:36px}
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
@@ -196,3 +196,16 @@ footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:spac
 .notfound .wrap{padding-block:72px 96px}
 .notfound .big-404{font-family:var(--display);font-weight:700;font-size:clamp(6rem,22vw,11rem);line-height:.9;color:var(--red);margin:8px 0 0}
 .notfound .cta{margin-top:24px}
+
+/* home page summary blocks */
+.home-block .summary{max-width:46em;margin-top:12px}
+.more{display:inline-block;margin-top:16px;color:var(--ink);font-family:var(--mono);font-size:.85rem;text-decoration:none;border-bottom:1px solid var(--red)}
+a.more:hover{color:var(--red)}
+.do-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.do-card{display:grid;gap:8px;align-content:start;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px;text-decoration:none;color:var(--ink);transition:border-color .2s}
+.do-card p{color:var(--muted);font-size:.94rem}
+.do-card .more{margin-top:6px;justify-self:start}
+.do-card:hover,.do-card:focus-visible{border-color:var(--red)}
+.cta-band h2{margin-bottom:8px}
+.cta-band p{color:var(--muted);margin-bottom:20px}
+@media (max-width:820px){.do-grid{grid-template-columns:1fr}}

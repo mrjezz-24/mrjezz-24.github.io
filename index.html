@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>document.documentElement.className+=" js"</script>
+<script>document.documentElement.className+=" js";(function(h){if(/^(about|skills|experience|tools|contact)$/.test(h))location.replace(h+".html")})(location.hash.slice(1))</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mr. Jezz | AI-Assisted SEO/Website Specialist &amp; Social Media</title>
 <meta name="description" content="Mr. Jezz is a Philippines-based virtual assistant for on-page SEO, WordPress optimization and social media management: graphics, video editing and daily posting.">
@@ -34,15 +34,15 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top">Mr. <b>Jezz</b></a>
-    <nav aria-label="Sections">
-      <a href="#top" aria-current="page">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
+    <a class="brand" href="index.html">Mr. <b>Jezz</b></a>
+    <nav aria-label="Pages">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="experience.html">Experience</a>
       <a href="work.html">Work</a>
-      <a href="#tools">Tools</a>
-      <a href="#contact">Contact</a>
+      <a href="tools.html">Tools</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="head-social"><a class="social hd" href="https://www.facebook.com/jezzersonjay.r.mangalay.3" target="_blank" rel="noopener me" aria-label="Mr. Jezz on Facebook" title="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a><a class="social hd" href="https://www.instagram.com/jezz.0518/" target="_blank" rel="noopener me" aria-label="Mr. Jezz on Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a><a class="social hd" href="https://www.tiktok.com/@motojezz.va" target="_blank" rel="noopener me" aria-label="Mr. Jezz on TikTok" title="TikTok"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></div>
   </div>
@@ -56,8 +56,8 @@
         <h1><span class="h1-line slide" style="--i:1">Mr. Jezz</span> <span class="h1-red"><span class="h1-line slide" style="--i:2">AI-Assisted</span> <span class="h1-line slide" style="--i:3">SEO &amp;</span> <span class="h1-line slide" style="--i:4">Social Media</span></span></h1>
         <p class="lede slide" style="--i:5">Virtual assistant for SEO, website optimization and social media management. I make WordPress sites easier to find and keep your social pages active with graphics, videos and daily posts.</p>
         <div class="cta slide" style="--i:6">
-          <a class="btn primary" href="#contact">Hire me</a>
-          <a class="btn ghost" href="#experience">See my work</a>
+          <a class="btn primary" href="contact.html">Hire me</a>
+          <a class="btn ghost" href="work.html">See my work</a>
           <a class="btn ghost" href="resume.pdf" download="Jezzerson-Jay-Mangalay-Resume.pdf">Download resume</a>
         </div>
         <div class="facts">
@@ -70,151 +70,22 @@
     </div>
   </div>
 
-  <section id="about" class="anim">
-    <div class="wrap about">
-      <div>
-        <div class="head slide" style="--i:0"><span class="label">About</span><h2>Better rankings start with the details</h2></div>
-        <p class="slide" style="--i:1">I handle the on-page work that helps a website show up in search: SEO titles and meta descriptions, image alt text, compressed WebP images, and internal links that actually point where they should.</p>
-        <p class="slide" style="--i:2">I use AI tools to research, plan and draft, which lets me take on site-wide updates without losing accuracy. Every change is checked on the live site before I call it done.</p>
-        <div class="snippet slide" style="margin-top:28px;--i:3" aria-label="Search result for a site I optimized: Dalux Junk Removal &amp; Hauling homepage">
-          <span class="label" style="margin-bottom:6px">Client sample · Dalux Junk Removal &amp; Hauling</span>
-          <span class="url">daluxjunkremovalandhauling.com</span>
-          <a class="t" href="https://daluxjunkremovalandhauling.com/" target="_blank" rel="noopener">Junk Removal San Jose, CA | Dalux Junk Removal &amp; Hauling</a>
-          <span class="d">Junk removal in San Jose and the South Bay: furniture, appliances, garage and estate cleanouts. Free quote first, $299 minimum. Text or call 408-466-0288.</span>
-          <div class="meta"><span>Title: 56 characters</span><span>Description: 154 characters</span><span>Service + city keyword</span><span>Phone number for calls</span></div>
-        </div>
-      </div>
-      <dl class="dl slide-r">
-        <div><dt>Role</dt><dd>SEO &amp; Social Media Virtual Assistant</dd></div>
-        <div><dt>Location</dt><dd>Philippines</dd></div>
-        <div><dt>Availability</dt><dd>Flexible hours, works across time zones</dd></div>
-        <div><dt>Platform</dt><dd>WordPress with Rank Math SEO</dd></div>
-        <div><dt>Also offering</dt><dd>Social media management, graphic design and video editing</dd></div>
-      </dl>
+  <section id="about" class="home-block anim">
+    <div class="wrap">
+      <div class="head slide" style="--i:0"><span class="label">About me</span><h2>Better rankings start with the details</h2></div>
+      <p class="summary slide" style="--i:1">I handle the on-page work that helps a website show up in search: SEO titles and meta descriptions, image alt text, compressed WebP images, and internal links that actually point where they should.</p>
+      <p class="summary slide" style="--i:2">I also keep your social pages active with graphics, short videos and daily posts, and I can handle day-to-day operations support.</p>
+      <a class="more slide" style="--i:3" href="about.html">Read more about me →</a>
     </div>
   </section>
 
-  <section id="skills">
+  <section id="skills" class="home-block anim">
     <div class="wrap">
-      <div class="head"><span class="label">Core skills</span><h2>What I can do for you</h2></div>
-      <h3 class="subhead">SEO &amp; website</h3>
-      <div class="skills">
-        <div class="skill"><h3>On-page SEO</h3><p>On-page SEO implementation using Rank Math SEO.</p></div>
-        <div class="skill"><h3>Titles &amp; meta descriptions</h3><p>SEO title and meta description optimization for every page.</p></div>
-        <div class="skill"><h3>Image SEO</h3><p>Image SEO and alt-text optimization across the media library.</p></div>
-        <div class="skill"><h3>WebP optimization</h3><p>Image compression and WebP asset replacement for faster pages.</p></div>
-        <div class="skill"><h3>WordPress management</h3><p>Website content and page management in WordPress.</p></div>
-        <div class="skill"><h3>Internal linking</h3><p>Internal linking corrections and consistent content across the site.</p></div>
-        <div class="skill"><h3>Site-wide updates</h3><p>Large content updates rolled out across many pages at once.</p></div>
-        <div class="skill"><h3>AI-assisted workflow</h3><p>AI-assisted research, planning, drafting and workflow optimization.</p></div>
-        <div class="skill"><h3>SEO quality checks</h3><p>Live website updates with implementation quality checks.</p></div>
-      </div>
-      <h3 class="subhead">Social media &amp; creative</h3>
-      <div class="skills">
-        <div class="skill"><h3>Social media management</h3><p>Daily posting, captions and scheduling for your pages.</p></div>
-        <div class="skill"><h3>Social media strategy</h3><p>Content strategies that support your marketing.</p></div>
-        <div class="skill"><h3>Content creation</h3><p>Graphics, videos and captions made for your brand.</p></div>
-        <div class="skill"><h3>Graphic design</h3><p>Social media graphics and promotional materials made in Canva.</p></div>
-        <div class="skill"><h3>Video editing</h3><p>Videos edited for social media and marketing.</p></div>
-        <div class="skill"><h3>Digital marketing</h3><p>Digital marketing and Google Ads support.</p></div>
-      </div>
-      <h3 class="subhead">Operations &amp; admin</h3>
-      <div class="skills">
-        <div class="skill"><h3>Operations management</h3><p>Managing daily operations and field teams.</p></div>
-        <div class="skill"><h3>Team coordination</h3><p>Coordinating teams, jobs and routes.</p></div>
-        <div class="skill"><h3>Scheduling &amp; dispatch</h3><p>Scheduling jobs and dispatching field teams.</p></div>
-        <div class="skill"><h3>Customer communication</h3><p>Handling customer messages and operational issues.</p></div>
-        <div class="skill"><h3>CRM management</h3><p>Keeping customer records organized and up to date.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="wrap">
-      <div class="head"><span class="label">Experience</span><h2>Recent work</h2></div>
-      <article class="exp">
-        <div style="display:grid;gap:12px;align-content:start">
-          <span class="label">Project-based · 2026</span>
-          <h3>SEO &amp; Website Optimization Project</h3>
-        </div>
-        <div style="display:grid;gap:18px">
-          <p class="desc">Executed on-page SEO improvements and WordPress website optimization, leveraging AI tools to improve workflow efficiency and support large-scale implementation.</p>
-          <ul class="tasks">
-            <li>Implemented SEO title and meta description updates across existing website pages using Rank Math SEO</li>
-            <li>Corrected broken or missing image alt text and added descriptive alt text to page and media-library images</li>
-            <li>Replaced large logo and mascot image files with smaller WebP versions to help reduce image payloads</li>
-            <li>Updated site-wide service messaging and corrected internal links across the website</li>
-            <li>Planned and drafted changes before publishing updates to the live website</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="exp">
-        <div style="display:grid;gap:12px;align-content:start">
-          <span class="label">ASAP Junk Removal · 2025</span>
-          <h3>Social Media Manager</h3>
-        </div>
-        <div style="display:grid;gap:18px">
-          <p class="desc">Managed the company's social media, from planning content to posting it every day.</p>
-          <ul class="tasks">
-            <li>Managed social media content and daily posting</li>
-            <li>Created graphics, videos, captions and content strategies</li>
-            <li>Coordinated with field teams for photo and video content</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="exp">
-        <div style="display:grid;gap:12px;align-content:start">
-          <span class="label">Maysfield Appliances · 2025</span>
-          <h3>Graphic Designer &amp; Video Editor</h3>
-        </div>
-        <div style="display:grid;gap:18px">
-          <p class="desc">Produced the visual and video content used across social media and marketing.</p>
-          <ul class="tasks">
-            <li>Created graphics and promotional materials</li>
-            <li>Edited videos for social media and marketing</li>
-            <li>Developed visual content based on company needs</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="exp">
-        <div style="display:grid;gap:12px;align-content:start">
-          <span class="label">Arla Business Solutions · 2025</span>
-          <h3>Graphic Designer</h3>
-        </div>
-        <div style="display:grid;gap:18px">
-          <p class="desc">Designed branded visuals for the company's digital platforms.</p>
-          <ul class="tasks">
-            <li>Created social media graphics and marketing materials</li>
-            <li>Developed branded visual content for digital platforms</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="exp">
-        <div style="display:grid;gap:12px;align-content:start">
-          <span class="label">The Junkies · 2025</span>
-          <h3>Operations Manager</h3>
-        </div>
-        <div style="display:grid;gap:18px">
-          <p class="desc">Ran day-to-day operations and kept field teams, schedules and customers in sync.</p>
-          <ul class="tasks">
-            <li>Managed daily operations and field teams</li>
-            <li>Coordinated schedules, jobs and routes</li>
-            <li>Handled customer communication and operational issues</li>
-            <li>Monitored job progress and service quality</li>
-          </ul>
-        </div>
-      </article>
-
-      <div class="head" style="margin-top:56px"><span class="label">How I work</span><h2>From audit to live site</h2></div>
-      <div class="steps">
-        <div class="step"><h3>Review</h3><p>Check pages, metadata, images and links to find what needs fixing.</p></div>
-        <div class="step"><h3>Plan</h3><p>Use AI tools to research and draft titles, descriptions and updates.</p></div>
-        <div class="step"><h3>Implement</h3><p>Apply changes in WordPress and Rank Math, page by page or site-wide.</p></div>
-        <div class="step"><h3>Check</h3><p>Verify every update on the live site before handing it back.</p></div>
+      <div class="head slide" style="--i:0"><span class="label">What I do</span><h2>How I can help</h2></div>
+      <div class="do-grid">
+        <a class="do-card slide-r" style="--i:0" href="skills.html"><h3>SEO &amp; website optimization</h3><p>Rank Math titles and meta descriptions, image SEO, WebP optimization and internal linking on WordPress.</p><span class="more">See skills →</span></a>
+        <a class="do-card slide-r" style="--i:1" href="skills.html"><h3>Social media &amp; creative</h3><p>Daily posting, captions, Canva graphics and short videos for your social pages.</p><span class="more">See skills →</span></a>
+        <a class="do-card slide-r" style="--i:2" href="skills.html"><h3>Operations &amp; admin</h3><p>Team coordination, scheduling and dispatch, customer communication and CRM management.</p><span class="more">See skills →</span></a>
       </div>
     </div>
   </section>
@@ -231,43 +102,11 @@
     </div>
   </section>
 
-  <section id="tools">
+  <section id="get-started" class="cta-band anim" style="border-bottom:4px solid var(--red)">
     <div class="wrap">
-      <div class="head"><span class="label">Tools &amp; technologies</span><h2>What I work with</h2></div>
-      <div class="tools">
-        <div class="tool"><strong>WordPress</strong><span>Website and page management</span></div>
-        <div class="tool"><strong>Rank Math SEO</strong><span>SEO titles and meta descriptions</span></div>
-        <div class="tool"><strong>AI Tools</strong><span>Research, planning, content drafting and workflow assistance</span></div>
-        <div class="tool"><strong>WebP Image Optimization</strong><span>Image asset optimization and file-size reduction</span></div>
-        <div class="tool"><strong>Media Library Management</strong><span>Image organization and alt-text optimization</span></div>
-        <div class="tool"><strong>Canva</strong><span>Graphics and social posts</span></div>
-        <div class="tool"><strong>CRM tools</strong><span>Customer records</span></div>
-        <div class="tool"><strong>Social media platforms</strong><span>Posting and managing social pages</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact anim" style="border-bottom:4px solid var(--red)">
-    <div class="wrap">
-      <div class="head" style="margin-bottom:0"><span class="label slide" style="--i:0">Contact</span><h2 class="slide" style="--i:1">Need your site <span>optimized?</span></h2><p class="slide" style="--i:2">Send me a message with your website and what you'd like improved. I'll get back to you with how I can help.</p>
-        <form class="cform slide" style="--i:3" id="contact-form" action="https://formsubmit.co/jezzersonjaym@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New message from your portfolio site">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
-          <label><span class="label">Name</span><input type="text" name="name" required autocomplete="name"></label>
-          <label><span class="label">Email</span><input type="email" name="email" required autocomplete="email"></label>
-          <label><span class="label">Message</span><textarea name="message" required></textarea></label>
-          <button class="btn primary" type="submit">Send message</button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-      <div class="lines">
-        <div class="line slide-r" style="--i:0"><span class="label">Email</span><div class="row"><span class="val" id="email-val">jezzersonjaym@gmail.com</span><button class="copy" type="button" data-copy="email-val">Copy</button></div></div>
-        <div class="line slide-r" style="--i:1"><span class="label">Phone</span><div class="row"><span class="val" id="phone-val">0912 223 2092</span><button class="copy" type="button" data-copy="phone-val">Copy</button></div></div>
-        <div class="line slide-r" style="--i:2" id="resume"><span class="label">Resume</span><div class="row" style="justify-content:flex-start"><a class="btn primary" href="resume.pdf" download="Jezzerson-Jay-Mangalay-Resume.pdf">Download resume (PDF)</a></div></div>
-        <div class="line slide-r" style="--i:3"><span class="label">Follow me</span><div class="socials"><a class="social" href="https://www.facebook.com/jezzersonjay.r.mangalay.3" target="_blank" rel="noopener me" aria-label="Mr. Jezz on Facebook" title="Facebook"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a><a class="social" href="https://www.instagram.com/jezz.0518/" target="_blank" rel="noopener me" aria-label="Mr. Jezz on Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a><a class="social" href="https://www.tiktok.com/@motojezz.va" target="_blank" rel="noopener me" aria-label="Mr. Jezz on TikTok" title="TikTok"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></div></div>
-      </div>
+      <h2 class="slide" style="--i:0">Ready to get started?</h2>
+      <p class="slide" style="--i:1">Tell me what you need and I’ll get back to you with how I can help.</p>
+      <div class="cta slide" style="--i:2"><a class="btn primary" href="contact.html">Contact me</a><a class="btn ghost" href="resume.pdf" download="Jezzerson-Jay-Mangalay-Resume.pdf">Download resume</a></div>
     </div>
   </section>
 </main>
