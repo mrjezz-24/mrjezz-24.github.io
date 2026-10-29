@@ -112,7 +112,7 @@ section{padding-block:64px;border-bottom:1px solid var(--line)}
 .exp{display:grid;grid-template-columns:1fr 1.6fr;gap:40px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:6px;padding:32px}
 .exp > *{min-width:0}
 .exp + .exp{margin-top:18px}
-.exp h3{font-size:1.6rem}
+.exp h2,.exp h3{font-size:1.6rem}
 .exp .desc{color:var(--muted)}
 .tasks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .tasks li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline}
