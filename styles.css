@@ -294,3 +294,28 @@ a.more:hover{color:var(--red)}
   .story-card{position:static;transform:none;width:auto;max-width:1000px;margin:0 auto;display:grid;gap:16px}
   .story-card .card,.story-card .card:not(.on){position:static;transform:none;opacity:1;visibility:visible}
 }
+
+/* tool cards: bordered card with a moving app logo and a short caption */
+.tool-group{padding-block:8px 28px}
+.tool-group h2{font-size:clamp(1.4rem,3.5vw,1.9rem);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.tool-group h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--red),transparent)}
+.tool-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.tool-card{display:flex;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:8px;padding:16px 18px;transition:border-color .25s,translate .25s,box-shadow .25s}
+.tool-card:hover{border-color:var(--red);translate:0 -3px;box-shadow:0 10px 30px rgba(227,38,47,.18)}
+.tool-card h3{font-family:var(--body);text-transform:none;letter-spacing:0;font-size:1.02rem;font-weight:600;margin-bottom:3px}
+.tool-card p{color:var(--muted);font-size:.9rem;line-height:1.45}
+.tool-logo{position:relative;flex:none;width:58px;height:58px;border-radius:14px;background:var(--tile);display:grid;place-items:center;color:#fff;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.12)}
+.tool-logo svg{width:30px;height:30px;fill:currentColor}
+.tool-logo b{font-family:var(--display);font-size:1.25rem;letter-spacing:.02em;line-height:1}
+.tool-logo::after{content:"";position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.35) 50%,transparent 60%);transform:translateX(-100%)}
+@media (prefers-reduced-motion:no-preference){
+  .tool-logo{animation:logo-float 3.2s ease-in-out infinite;animation-delay:calc(var(--d) * -1)}
+  .tool-logo::after{animation:logo-shine 4s ease-in-out infinite;animation-delay:var(--d)}
+  .tool-logo svg,.tool-logo b{animation:logo-pulse 3.2s ease-in-out infinite;animation-delay:calc(var(--d) * -1)}
+  .tool-card:hover .tool-logo svg,.tool-card:hover .tool-logo b{animation:logo-spin .7s ease-out}
+}
+@keyframes logo-float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-6px) rotate(3deg)}}
+@keyframes logo-shine{0%,55%{transform:translateX(-100%)}80%,100%{transform:translateX(100%)}}
+@keyframes logo-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@keyframes logo-spin{from{transform:rotateY(0)}to{transform:rotateY(360deg)}}
+@media (max-width:480px){.tool-cards{grid-template-columns:1fr}.tool-logo{width:50px;height:50px}}
