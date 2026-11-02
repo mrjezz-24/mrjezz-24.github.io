@@ -135,3 +135,17 @@ document.querySelectorAll('.copy').forEach(function(b){
   addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(upd)}},{passive:true});
   addEventListener('resize',upd);upd();
 })();
+// Design gallery: tilt each card toward the mouse in 3D, with a glare that follows the pointer
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.work-item.deal').forEach(function(el){
+    el.addEventListener('pointermove',function(e){
+      if(e.pointerType!=='mouse') return;
+      var r=el.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      el.classList.add('tilt');
+      el.style.rotate=(-y)+' '+x+' 0 '+(Math.sqrt(x*x+y*y)*28).toFixed(1)+'deg';
+      el.style.setProperty('--gx',(x+.5)*100+'%');el.style.setProperty('--gy',(y+.5)*100+'%');
+    });
+    el.addEventListener('pointerleave',function(){el.classList.remove('tilt');el.style.rotate=''});
+  });
+})();

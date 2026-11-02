@@ -342,3 +342,26 @@ a.more:hover{color:var(--red)}
 @keyframes dot-ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.6);opacity:0}}
 @media (max-width:600px){.timeline{padding-left:36px}.timeline::before,.tl-fill{left:12px}.tl-dot{left:-31px;top:28px;width:16px;height:16px}}
 #experience{overflow-x:clip}
+
+/* Design gallery in 3D: cards fly up from a deck and flip into place, tilt toward the mouse with a light glare */
+.work-grid{perspective:1400px}
+.work-item.deal{position:relative;transform-style:preserve-3d;transition:rotate .25s ease-out,scale .25s ease-out,box-shadow .25s,border-color .25s}
+.work-item.deal::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.32),transparent 55%);opacity:0;transition:opacity .25s}
+.work-item.deal.tilt{scale:1.05;z-index:2;box-shadow:0 24px 50px rgba(0,0,0,.6),0 0 0 1px var(--red),0 0 30px rgba(227,38,47,.3)}
+.work-item.deal.tilt::after{opacity:1}
+.work-item.deal.tilt img{transform:none}
+@media (prefers-reduced-motion:no-preference){
+  .js .anim:not(.play) .deal,.js .anim:not(.play) .flip3d{opacity:0}
+  .anim.play .deal{animation:deal-in 1s cubic-bezier(.2,.85,.25,1) both;animation-delay:calc(var(--i) * .08s + .15s)}
+  .anim.play .flip3d{animation:flip-up .8s cubic-bezier(.2,.9,.3,1.2) both;transform-origin:50% 100%}
+  .lightbox[open] img{animation:lb-in .55s cubic-bezier(.2,.9,.3,1) both}
+}
+@keyframes deal-in{
+  0%{opacity:0;transform:translate3d(calc(var(--dir) * -40px),160px,-500px) rotateX(75deg) rotateY(calc(var(--dir) * 35deg)) rotateZ(calc(var(--dir) * -12deg))}
+  55%{opacity:1}
+  80%{transform:translate3d(0,-10px,40px) rotateX(-8deg) rotateY(calc(var(--dir) * -4deg))}
+  100%{opacity:1;transform:none}
+}
+@keyframes flip-up{from{opacity:0;transform:perspective(600px) rotateX(-95deg)}to{opacity:1;transform:none}}
+@keyframes lb-in{from{opacity:0;transform:perspective(1200px) rotateY(-40deg) scale(.6)}to{opacity:1;transform:none}}
+#work{overflow-x:clip}
