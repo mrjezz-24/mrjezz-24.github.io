@@ -319,3 +319,26 @@ a.more:hover{color:var(--red)}
 @keyframes logo-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 @keyframes logo-spin{from{transform:rotateY(0)}to{transform:rotateY(360deg)}}
 @media (max-width:480px){.tool-cards{grid-template-columns:1fr}.tool-logo{width:50px;height:50px}}
+
+/* Experience timeline: a red line draws down the page as you scroll, each role pops in on its node */
+.timeline{position:relative;padding-left:48px}
+.timeline::before,.tl-fill{content:"";position:absolute;left:22px;top:0;width:3px;border-radius:3px}
+.timeline::before{bottom:0;background:var(--line)}
+.tl-fill{height:calc(var(--tl,1) * 100%);background:linear-gradient(var(--red),#ff5a62);box-shadow:0 0 12px rgba(227,38,47,.7)}
+.exp{position:relative;transition:border-color .3s,box-shadow .3s,translate .3s}
+.exp:hover{border-color:var(--red);box-shadow:0 14px 40px rgba(227,38,47,.16);translate:0 -3px}
+.tl-dot{position:absolute;left:-34px;top:36px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:3px solid var(--red);box-shadow:0 0 0 5px var(--bg)}
+.tl-dot::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:2px solid var(--red);opacity:0}
+.tasks li.slide{will-change:opacity,transform}
+@media (prefers-reduced-motion:no-preference){
+  .js .exp.anim:not(.play){opacity:0;transform:translateX(60px) scale(.97)}
+  .exp.anim{transition:opacity .7s ease-out,transform .7s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s,translate .3s}
+  .exp.anim.play .tl-dot{animation:dot-pop .5s .15s cubic-bezier(.3,1.6,.5,1) both}
+  .exp.anim.play .tl-dot::after{animation:dot-ring 2.4s .6s ease-out infinite}
+  .exp.anim .tasks li.slide{animation-duration:.45s}
+  .exp.anim.play .slide{animation-delay:calc(var(--i) * .1s + .25s)}
+}
+@keyframes dot-pop{from{transform:scale(0);background:var(--red)}to{transform:scale(1)}}
+@keyframes dot-ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.6);opacity:0}}
+@media (max-width:600px){.timeline{padding-left:36px}.timeline::before,.tl-fill{left:12px}.tl-dot{left:-31px;top:28px;width:16px;height:16px}}
+#experience{overflow-x:clip}

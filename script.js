@@ -126,3 +126,12 @@ document.querySelectorAll('.copy').forEach(function(b){
   });
   render();
 })();
+// Experience timeline: fill the red line as far as the reader has scrolled
+(function(){
+  var tl=document.querySelector('.timeline');
+  if(!tl) return;
+  var ticking=false;
+  function upd(){ticking=false;var r=tl.getBoundingClientRect(),p=(innerHeight*.7-r.top)/r.height;tl.style.setProperty('--tl',Math.max(0,Math.min(1,p)).toFixed(3))}
+  addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(upd)}},{passive:true});
+  addEventListener('resize',upd);upd();
+})();
