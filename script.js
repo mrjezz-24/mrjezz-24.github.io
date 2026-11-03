@@ -138,14 +138,26 @@ document.querySelectorAll('.copy').forEach(function(b){
 // Design gallery: tilt each card toward the mouse in 3D, with a glare that follows the pointer
 (function(){
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  document.querySelectorAll('.work-item.deal').forEach(function(el){
+  document.querySelectorAll('.work-item.deal,.tilt3d').forEach(function(el){
     el.addEventListener('pointermove',function(e){
       if(e.pointerType!=='mouse') return;
       var r=el.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
       el.classList.add('tilt');
-      el.style.rotate=(-y)+' '+x+' 0 '+(Math.sqrt(x*x+y*y)*28).toFixed(1)+'deg';
+      el.style.rotate=(-y)+' '+x+' 0 '+(Math.sqrt(x*x+y*y)*(el.classList.contains('deal')?28:14)).toFixed(1)+'deg';
       el.style.setProperty('--gx',(x+.5)*100+'%');el.style.setProperty('--gy',(y+.5)*100+'%');
     });
     el.addEventListener('pointerleave',function(){el.classList.remove('tilt');el.style.rotate=''});
   });
+})();
+// Contact form: a little envelope flies off when a message is sent
+(function(){
+  var st=document.getElementById('form-status'), btn=document.querySelector('.send-btn');
+  if(!st||!btn||matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  new MutationObserver(function(){
+    if(!st.classList.contains('ok')) return;
+    var r=btn.getBoundingClientRect(), m=document.createElement('span');
+    m.className='fly-mail';m.textContent='\u2709\uFE0F';m.setAttribute('aria-hidden','true');
+    m.style.left=(r.left+r.width/2-16)+'px';m.style.top=(r.top-10)+'px';
+    document.body.appendChild(m);setTimeout(function(){m.remove()},1500);
+  }).observe(st,{attributes:true,attributeFilter:['class']});
 })();
